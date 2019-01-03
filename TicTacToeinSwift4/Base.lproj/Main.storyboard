@@ -115,12 +115,32 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qlE-Dn-I8L"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noughat has won" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNk-la-E3C">
+                                <rect key="frame" x="74" y="317" width="227.5" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" red="0.11622054446903196" green="1" blue="0.32076960032895174" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hH5-34-T0D">
+                                <rect key="frame" x="137.5" y="358" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="4cP-LN-beJ"/>
+                                    <constraint firstAttribute="height" constant="30" id="elx-pl-F2B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Vr-7v-K8E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="sNk-la-E3C" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Ci-gV-1Rd"/>
                             <constraint firstItem="pmr-5I-gpp" firstAttribute="leading" secondItem="cXK-pW-OMa" secondAttribute="trailing" constant="43" id="80I-dC-cYK"/>
                             <constraint firstItem="cXK-pW-OMa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DEt-za-fg3"/>
                             <constraint firstItem="27l-2B-4zn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DUG-qr-lo9"/>
+                            <constraint firstItem="sNk-la-E3C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GuD-CW-MJr"/>
                             <constraint firstItem="OtR-PS-2qA" firstAttribute="top" secondItem="42E-dv-ztt" secondAttribute="bottom" constant="86.5" id="JCO-zw-aaK"/>
                             <constraint firstItem="42E-dv-ztt" firstAttribute="top" secondItem="cXK-pW-OMa" secondAttribute="bottom" constant="76.5" id="OIh-nz-Oo2"/>
                             <constraint firstItem="42E-dv-ztt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OfF-wc-izm"/>
@@ -128,6 +148,8 @@
                             <constraint firstItem="ZJP-6P-emh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qsh-CC-Ch2"/>
                             <constraint firstItem="OtR-PS-2qA" firstAttribute="leading" secondItem="wKw-Er-drN" secondAttribute="trailing" constant="56" id="U3B-fB-s09"/>
                             <constraint firstItem="hjD-nW-sQp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bWe-xX-TlF"/>
+                            <constraint firstItem="hH5-34-T0D" firstAttribute="top" secondItem="sNk-la-E3C" secondAttribute="bottom" constant="8" id="cdx-eT-tUY"/>
+                            <constraint firstItem="hH5-34-T0D" firstAttribute="centerX" secondItem="sNk-la-E3C" secondAttribute="centerX" id="eIH-Yd-HrE"/>
                             <constraint firstItem="ZJP-6P-emh" firstAttribute="leading" secondItem="42E-dv-ztt" secondAttribute="trailing" constant="43" id="fTi-zr-Fq4"/>
                             <constraint firstItem="27l-2B-4zn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iAx-VQ-mO4"/>
                             <constraint firstItem="wKw-Er-drN" firstAttribute="top" secondItem="hjD-nW-sQp" secondAttribute="bottom" constant="86.5" id="lVk-xa-upY"/>
@@ -141,6 +163,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playAgainButton" destination="hH5-34-T0D" id="Ht0-vS-ufk"/>
+                        <outlet property="winnerLabel" destination="sNk-la-E3C" id="rkS-zt-6GA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
