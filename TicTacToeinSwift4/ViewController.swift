@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     // 1 - is noughts and 2 - crosses
     private var activePlayer = 1
-    
+    private var gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0]  // 0 - Empty, 1 - is noughts and 2 - crosses
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +21,19 @@ class ViewController: UIViewController {
     
     //    MARK: - Button's Action
     @IBAction func buttonPressed(_ sender: UIButton) {
-        
-        if activePlayer == 1 {
-            sender.setImage(UIImage(named: "nought"), for: .normal)
-            activePlayer = 2
-        } else {
-            sender.setImage(UIImage(named: "cross"), for: .normal)
-            activePlayer = 1
+        let activePosition = sender.tag - 1
+        if gameState[activePosition] == 0 {
+            
+            gameState[activePosition] = activePlayer
+            
+            if activePlayer == 1 {
+                sender.setImage(UIImage(named: "nought"), for: .normal)
+                activePlayer = 2
+            } else {
+                sender.setImage(UIImage(named: "cross"), for: .normal)
+                activePlayer = 1
+            }
+            
         }
         
     }
