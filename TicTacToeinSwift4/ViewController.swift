@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     // 1 - is noughts and 2 - crosses
     private var activePlayer = 1
     private var gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0]  // 0 - Empty, 1 - is noughts and 2 - crosses
+    let winingCombinations = [ [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,14 @@ class ViewController: UIViewController {
             } else {
                 sender.setImage(UIImage(named: "cross"), for: .normal)
                 activePlayer = 1
+            }
+            
+            winingCombinations.forEach { (combination) in
+                let isWin = gameState[combination[0]] != 0 && gameState[combination[0]] == gameState[combination[1]]
+                    && gameState[combination[1]] == gameState[combination[2]]
+                if isWin {
+                    //                    We got the winner
+                }
             }
             
         }
